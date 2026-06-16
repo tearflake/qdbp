@@ -1,4 +1,4 @@
-# dpe changelog
+# DP-Expr Changelog
 
 ## Jun, 2026.
 
