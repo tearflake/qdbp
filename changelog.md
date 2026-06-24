@@ -8,5 +8,5 @@
 - v0.1.x
     - renamed DP to QDBP
     - QD may embed BP, BP may embed QD
-    - playround experiment
+    - playground experiment
 
