@@ -2,7 +2,7 @@
 // under construction //
 ```
 
-# QDBP-Compiler
+# QDBP Compiler
 
 **QDBP (Quested-Depth/Boundary-Perceived Expressions)** is a tree notation framework that allows hierarchical structures to be written using either:
 
