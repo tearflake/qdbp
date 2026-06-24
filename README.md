@@ -1,5 +1,5 @@
 ```
-// under construction //`
+// under construction //
 ```
 
 # QDBP-Compiler
@@ -84,6 +84,6 @@ The project explores whether boundary-oriented and depth-oriented tree represent
 Feedback, criticism, and alternative interpretations are welcome.
 
 ```
-// under construction //`
+// under construction //
 ```
 
