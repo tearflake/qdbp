@@ -20,3 +20,5 @@ package
 let strSExpr = QDBP.compile (strCode);
 ```
 
+Have fun.
+
