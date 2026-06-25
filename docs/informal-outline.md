@@ -179,7 +179,7 @@ For example:
 
 Here:
 
-* the top node is parenthesized for greater portability,
+* the top node is parenthesized for portability,
 * the package/module/function hierarchy is represented using QD notation,
 * executable expressions remain ordinary BP expressions.
 
@@ -195,23 +195,17 @@ QDBP is intended for tree-oriented data and programs.
 
 The notation is designed around explicit hierarchical structure rather than textual layout.
 
----
-
 ## Mixed Representation
 
 Boundary and depth representations may appear side by side.
 
 Users should be able to choose the most readable representation for each subtree.
 
----
-
 ## Whitespace Independence
 
 Structural information belongs to the notation itself.
 
 Indentation is optional and may be freely adjusted without changing semantics.
-
----
 
 ## Direct Translation
 
