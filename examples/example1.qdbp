@@ -1,4 +1,7 @@
-package
+(project
+    Test-QDBP
+    
+    package
     .shapes
 
     .module
@@ -34,4 +37,5 @@ package
         ..export
             ...area
             ...diagonal
+)
 

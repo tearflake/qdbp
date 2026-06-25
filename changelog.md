@@ -10,4 +10,5 @@
     - QD may embed BP, BP may embed QD
     - added playground experiment
     - optional whitespace between dots
+    - packaged as node.js package, may compile to binary command line tool
 

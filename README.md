@@ -64,7 +64,7 @@ Both forms describe exactly the same tree.
 
 ## Implementation
 
-The compiler processes QDBP format to output S-Expression format using API interface.
+The compiler processes QDBP format to output S-Expression format using API or CLI.
 
 Resources:
 

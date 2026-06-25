@@ -70,66 +70,73 @@ More detailed specification algorithm would look like:
 QDBP source:
 
 ```text
-package
-    .shapes
+(project
+    Test-QDBP
 
-    .module
-        ..math
+    package
+        .shapes
 
-        ..fn
-            ...square
-            ...(lambda (x)
-                (* x x))
+        .module
+            ..math
+
+            ..fn
+                ...square
+                ...(lambda (x)
+                    (* x x))
+            
+            ..fn
+            ...distance
+                ...(lambda (x y)
+                    (sqrt (+ (* x x) (* y y))))
         
-        ..fn
-        ...distance
-            ...(lambda (x y)
-                (sqrt (+ (* x x) (* y y))))
-    
-    .module
-        ..square
-        
-        ..fn
-            ...area
-            ...(lambda (a)
-                (math/square a))
-        
-        ..fn
-            ...diagonal
-            ...(lambda (a)
-                (math/distance a a))
+        .module
+            ..square
+            
+            ..fn
+                ...area
+                ...(lambda (a)
+                    (math/square a))
+            
+            ..fn
+                ...diagonal
+                ...(lambda (a)
+                    (math/distance a a))
+)
 ```
 
 expands to:
 
 ```text
-(package
-    shapes
+(project
+    Test-QDBP
+    
+    (package
+        shapes
 
-    (module
-        math
+        (module
+            math
 
-        (fn
+            (fn
+                square
+                (lambda (x)
+                    (* x x)))
+                
+            (fn
+                distance
+                (lambda (x y)
+                    (sqrt (+ (* x x) (* y y))))))
+                
+        (module
             square
-            (lambda (x)
-                (* x x)))
             
-        (fn
-            distance
-            (lambda (x y)
-                (sqrt (+ (* x x) (* y y))))))
-            
-    (module
-        square
-        
-        (fn
-            area
-            (lambda (a)
-                (math/square a)))
-            
-        (fn
-            diagonal
-            (lambda (a)
-                (math/distance a a)))))
+            (fn
+                area
+                (lambda (a)
+                    (math/square a)))
+                
+            (fn
+                diagonal
+                (lambda (a)
+                    (math/distance a a))))))
 ```
 

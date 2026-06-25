@@ -156,25 +156,30 @@ Instead, QDBP allows each notation to be used where it is most natural.
 For example:
 
 ```text
-package
-    .shapes
+(project
+    Test-QDBP
 
-    .module
-        ..math
+    package
+        .shapes
 
-        ..fn
-            ...square
-            ...(lambda (x)
-                (* x x))
+        .module
+            ..math
 
-        ..fn
-            ...distance
-            ...(lambda (x y)
-                (sqrt (+ (* x x) (* y y))))
+            ..fn
+                ...square
+                ...(lambda (x)
+                    (* x x))
+
+            ..fn
+                ...distance
+                ...(lambda (x y)
+                    (sqrt (+ (* x x) (* y y))))
+)
 ```
 
 Here:
 
+* the top node is parenthesized for greater portability,
 * the package/module/function hierarchy is represented using QD notation,
 * executable expressions remain ordinary BP expressions.
 

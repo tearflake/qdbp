@@ -1,0 +1,29 @@
+{
+  "name": "@tearflake/qdbp",
+  "version": "0.1.2",
+  "description": "An alternative surface syntax for symbolic expressions",
+  "main": "qdbp.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "bin": {
+    "qdbp": "qdbp.js"
+  },
+  "scripts": {
+    "test": "bash ./tests.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tearflake/qdbp.git"
+  },
+  "keywords": [
+    "s-expression"
+  ],
+  "author": "tearflake",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tearflake/qdbp/issues"
+  },
+  "homepage": "https://github.com/tearflake/qdbp#readme"
+}
