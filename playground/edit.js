@@ -21,7 +21,7 @@ var edit = function (node, options) {
     <div id="container${rndid}" style="position: relative; width: inherit; height: inherit; overflow: hidden;">
       <textarea class="cls${rndid}" id="input${rndid}" spellcheck="false" wrap="off" style="z-index: 0; width: inherit; height: inherit; border-style: none; border-radius: 0; outline: none; resize: none; box-sizing: border-box; display: block; background-color: ${options.colorTextBack}; color: ${options.colorText}; caret-color: ${options.colorCaret}; font: ${options.font}; padding: 0.2em; border:0; margin:0; position: absolute; top: 0; left: 0; overflow: hidden; /*scrollbar-color: white black*/; line-height: 100%;/*caret-shape: block;*/">
       </textarea>
-      <div id="caret" style="visibility: hidden; position: absolute; top:0; left:0; width: 3px; height: 2.25em; background-color: white;"></div>
+      <div id="caret" style="visibility: hidden; position: absolute; top:0; left:0; width: 3px; height: 2em; background-color: white;"></div>
     </div>
     `
 
@@ -317,7 +317,7 @@ var edit = function (node, options) {
     function getCharacterHeight() {
         const font = getComputedStyle(input).font;
         
-        return parseFloat(font);
+        return parseFloat(font) + 0.1;
     }
     
     var caretOn = true;
