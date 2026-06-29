@@ -80,8 +80,10 @@ var QDBP = (
             if (rec > 0 && token === null)
                 throw new Error(`Unexpected end of file\nat ${errBack (str, currPos)}`);
                 
-            if (rec === 0 && token !== null)
-                throw new Error(`Unexpected characters\nat ${errBack (str, currPos)}`);
+            if (rec === 0 && token !== null) {
+                let c = getCoords (str, currPos - 1);
+                throw new Error(`Unexpected characters\nat ${"(" + c.row + ", " + c.column + ")"}`);
+            }
 
             if (rec === 0 && result.length === 0)
                 throw new Error(`Empty file`);
