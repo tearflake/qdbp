@@ -579,6 +579,8 @@ var edit = function (node, options) {
             undoStack = [];
             redoStack = [];
             lastKeyType = "nav";
+            updateCaret();
+            setSliders();
         },
         getSelectionStart () {
             return input.selectionStart;
