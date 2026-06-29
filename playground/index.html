@@ -4,8 +4,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-<title>Quested-Depth/Boundary-Packed Expression Playground</title>
-
+<title>Quested-Depth/Boundary-Perceived Expression Playground</title>
+<link rel="icon" type="image/png" href="./icon-256.png"/>
 <link rel="icon" type="image/png" href=""/>
 
 <style type="text/css" media="screen">
@@ -175,7 +175,7 @@ body::selection {
 <tbody>
 <tr>
 <td class="exRound" id="top" cellpadding="10" align="center" valign="middle" height="30">
-<font style="font-family: sans-serif; font-size:2.25em"><strong>Quested-Depth/Boundary-Packed Expression Playground</strong></font>
+<font style="font-family: sans-serif; font-size:2.25em"><strong>Quested-Depth/Boundary-Perceived Expression Playground</strong></font>
 </td>
 </tr>
 <tr>
@@ -214,6 +214,7 @@ body::selection {
                         colorTextBack: "rgb(0,0,0)",
                         colorSelection: "rgb(0,0,0)",
                         colorSelectionBack: "rgb(255,255,255)",
+                        readOnly: false
                     }
                     
                     var input1 = edit ("rules", options);
@@ -252,15 +253,25 @@ body::selection {
              </td>
             </tr>
             <tr height="100%">
-             <td class="exRound" id="out" style="border-radius: 0px 0px 0px 0px;">
-              <textarea id="output" readonly wrap="off" spellcheck="false" id="output" style="overflow: hidden; filter: brightness(2); outline: none; box-sizing: border-box; width: 100%; height:100%; resize: none; display: block; border-style: none; background-color: rgb(0,0,0); color: rgb(255,255,255); font: 2em monospace; line-height: 100%; border-radius: 0px 0px 0px 0px; margin: 0; padding:0.2em;"></textarea>
+             <td class="exRound" id="out" style="border-radius: 0px 0px 0px 0px; border:0.2em solid black;">
+                <div id="output" class="container"  width="100%" style="position: relative; width: 100%; height: 100%;">
+                </div>
                 <script>
-                    output1 = document.getElementById('output');
-                    output1.addEventListener("mousewheel", (event) => {
-                        output1.scrollTop = output1.scrollTop + event.deltaY;
-                        output1.scrollLeft = output1.scrollLeft + event.deltaX;
-                        event.preventDefault();
-                    });
+                    var caretOn = true;
+                    var caretVisible = true;
+
+                    var options = {
+                        font: "2em monospace",
+                        tabWidth: 3,
+                        colorCaret: "rgb(0,0,0,0)",
+                        colorText: "rgb(255,255,255)",
+                        colorTextBack: "rgb(0,0,0)",
+                        colorSelection: "rgb(0,0,0)",
+                        colorSelectionBack: "rgb(255,255,255)",
+                        readOnly: true
+                    }
+                    
+                    var output1 = edit ("output", options);
                 </script>
              </td>
             </tr>
@@ -280,11 +291,11 @@ body::selection {
         <td align="left">
         </td>
         <td align="right">
-            <font style="font-family: sans-serif; font-size:2em;">
+            <font style="font-family: sans-serif; font-size: 2em;">
                 <b class="button">
                 <a id="bck2" href="https://github.com/tearflake" target="new" style="text-decoration: none;">
                 <span style="padding-left: 1em; padding-right: 1em;">
-                visit me on GitHub
+                <b>visit me on GitHub</b>
                 </span>
                 </a>
                 </b>
@@ -457,7 +468,7 @@ package
                 } else {
                     var sparsed = (Date.now () - tm)
                     //document.getElementById("tm").innerHTML = "(converting dp-expr to s-expr took " + sparsed + "ms)";
-                    output1.value = SExpr.stringify (output);
+                    output1.setValue (SExpr.stringify (output));
                 }
             }
             catch(e) {

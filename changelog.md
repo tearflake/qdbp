@@ -11,4 +11,5 @@
     - added playground experiment
     - optional whitespace between dots
     - packaged as node.js package, may compile to binary command line tool
+    - playground improvement
 

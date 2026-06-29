@@ -3,7 +3,7 @@
 **QDBP-Expressions** (QDBP) is a tree notation framework that combines two complementary ways of expressing hierarchical structure:
 
 * **Quested-Depth Expressions (QD)** — hierarchy is perceived through explicit depth levels using visible indentation markers.
-* **Boundary-Packed Expressions (BP)** — hierarchy is perceived through explicit subtree boundaries using ordinary S-expressions.
+* **Boundary-Perceived Expressions (BP)** — hierarchy is perceived through explicit subtree boundaries using ordinary S-expressions.
 
 Both notations represent the same underlying tree and may freely coexist within the same source file.
 
