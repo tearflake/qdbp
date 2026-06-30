@@ -57,7 +57,10 @@ var edit = function (node, options) {
     container.style.height = "inherit";
     
     function handleScroll () {
-        setSliders();
+        setTimeout(()=>{
+            updateCaret();
+            setSliders();
+        }, 0);
     }
     
     function handleInput () {
@@ -302,6 +305,7 @@ var edit = function (node, options) {
             document.getElementById(`scroll${rndid}h`).style.width = document.getElementById(`container${rndid}`).style.width;
             document.getElementById(`scroll${rndid}h`).style.height = 9 + "px";
             
+            updateCaret();
             setSliders();
             
             //hh = ed.clientHeight;
@@ -316,7 +320,7 @@ var edit = function (node, options) {
     function setSliders() {
         let hght = document.getElementById(`scroll${rndid}v`).clientHeight * document.getElementById(`input${rndid}`).clientHeight / document.getElementById(`input${rndid}`).scrollHeight;
         let top = (document.getElementById(`scroll${rndid}v`).clientHeight - hght) * document.getElementById(`input${rndid}`).scrollTop / (document.getElementById(`input${rndid}`).scrollHeight - document.getElementById(`input${rndid}`).clientHeight);
-        if (top < 0) top = 0;
+        if (isNaN (top) || top < 0) top = 0;
         
         document.getElementById(`slider${rndid}v`).style.top = top + "px";
         document.getElementById(`slider${rndid}v`).style.left = "0px";
@@ -325,7 +329,7 @@ var edit = function (node, options) {
 
         let wdth = document.getElementById(`scroll${rndid}h`).clientWidth * document.getElementById(`input${rndid}`).clientWidth / document.getElementById(`input${rndid}`).scrollWidth;
         let lft = (document.getElementById(`scroll${rndid}h`).clientWidth - wdth) * document.getElementById(`input${rndid}`).scrollLeft / (document.getElementById(`input${rndid}`).scrollWidth - document.getElementById(`input${rndid}`).clientWidth);
-        if (lft < 0) lft = 0;
+        if (isNaN (lft) || lft < 0) lft = 0;
 
         document.getElementById(`slider${rndid}h`).style.top = 0 + "px";
         document.getElementById(`slider${rndid}h`).style.left = lft + "px";
